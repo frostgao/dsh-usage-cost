@@ -8,9 +8,24 @@ DeepSeek 用量 / 成本统计插件（DeepSeek Harness / DSH）· A usage & cos
 
 ## Screenshots · 截图
 
-| 设置「用量」页 · Usage page | 会话徽章 · Header badge | 回复 chip · Message chip |
-| --- | --- | --- |
-| ![Usage page](screenshots/usage-settings.png) | ![Header badge](screenshots/header-badge.png) | ![Message chip](screenshots/message-chip.png) |
+<table>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="screenshots/usage-settings.png" alt="设置「用量」页 · Usage page" width="720" />
+      <br><sub>设置「用量」页 · Usage page</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="screenshots/header-badge.png" alt="会话徽章 · Header badge" width="95%" />
+      <br><sub>会话徽章 · Header badge</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="screenshots/message-chip.png" alt="回复 chip · Message chip" width="95%" />
+      <br><sub>回复 chip · Message chip</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
