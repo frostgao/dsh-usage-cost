@@ -1,0 +1,85 @@
+{
+  "name": "@frostgao/dsh-usage-cost",
+  "description": "DeepSeek usage & cost tracking for the DeepSeek Harness: a per-session cost badge, per-message cost chips, and a settings \"用量\" (Usage) page with an interactive trend chart.",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-theme"
+      ],
+      "immediately": true
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "usage",
+    "cost",
+    "billing",
+    "tokens",
+    "plugin"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frostgao/dsh-usage-cost"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-typert-protocol": "*",
+    "@deepseek-ai/dsh-session": "*",
+    "@deepseek-ai/dsh-session-query": "*",
+    "@deepseek-ai/dsh-client-ui-theme": "*"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "tsdown": "^0.22.2",
+    "typescript": "^6.0.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@deepseek-ai/dsh-typert-generator": "*",
+    "@deepseek-ai/dsh-typert-protocol": "*",
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-session": "*",
+    "@deepseek-ai/dsh-session-query": "*"
+  }
+}
