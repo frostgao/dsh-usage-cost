@@ -8,18 +8,17 @@ DeepSeek 用量 / 成本统计插件（DeepSeek Harness / DSH）· A usage & cos
 
 ## Screenshots · 截图
 
-> TODO：替换为实际截图。Replace these placeholders with real screenshots.
-> 截图建议放在 `screenshots/` 目录。
-
 | 设置「用量」页 · Usage page | 会话徽章 · Header badge | 回复 chip · Message chip |
 | --- | --- | --- |
 | ![Usage page](screenshots/usage-settings.png) | ![Header badge](screenshots/header-badge.png) | ![Message chip](screenshots/message-chip.png) |
 
 ---
 
+<a id="english"></a>
+
 ## English
 
-A black-gold-capable **usage & cost tracker** for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). It shows real-time token usage and billed cost directly in the UI, plus a full "Usage" settings page.
+A **usage & cost tracker** for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). It shows real-time token usage and billed cost directly in the UI, plus a full "Usage" settings page.
 
 ### What it does
 
@@ -53,7 +52,7 @@ Restart `dsh web`.
 - DeepSeek Harness (any recent version).
 - The `@deepseek-ai/dsh-client-ui-theme` plugin must be composed (it is, in every shipped profile).
 
-### Pricing
+### Pricing (0817)
 
 Unit: **CNY per million tokens**. Peak = Beijing time `09:00–12:00` and `14:00–18:00`; all other times are off-peak (half the peak price).
 
@@ -66,11 +65,11 @@ Unit: **CNY per million tokens**. Peak = Beijing time `09:00–12:00` and `14:00
 | | uncached input | 4.50 | 9.00 |
 | | output | 13.50 | 27.00 |
 
-`cost = (uncached_input × rate + cache_hit × rate + output × rate) / 1e6`. Unknown models are billed as `deepseek-v4-pro`.
+`cost = (uncached_input × rate + cache_hit × rate + output × rate) / 1e6`. Unknown models are billed as `deepseek-v4-pro`. Pricing is the **0817** snapshot of the official rate table.
 
 ### Theming
 
-Accent colors follow the theme token `--dsw-alias-brand-primary`: DeepSeek blue on the default theme, and champagne gold automatically under the black-gold theme. No configuration needed.
+Accent colors follow the theme token `--dsw-alias-brand-primary`, so the plugin adapts automatically to the active theme — no configuration needed.
 
 ### Caveats
 
@@ -88,9 +87,11 @@ MIT — see [LICENSE](./LICENSE).
 
 ---
 
+<a id="chinese"></a>
+
 ## 中文
 
-一个适用于 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的 **用量 / 成本统计插件**，在界面上实时显示 token 用量与费用，并提供一个完整的「用量」设置页。支持黑金主题自动适配。
+一个适用于 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的 **用量 / 成本统计插件**，在界面上实时显示 token 用量与费用，并提供一个完整的「用量」设置页。
 
 ### 功能
 
@@ -124,7 +125,7 @@ npm install @frostgao/dsh-usage-cost
 - DeepSeek Harness（任意近期版本）。
 - 必须组合 `@deepseek-ai/dsh-client-ui-theme`（每个默认 profile 都已组合）。
 
-### 计费规则
+### 计费规则（0817）
 
 单位：**人民币 元 / 百万 tokens**。高峰时段 = 北京时间 `09:00–12:00` 与 `14:00–18:00`，其余为空闲（空闲价 = 高峰价一半）。
 
@@ -137,11 +138,11 @@ npm install @frostgao/dsh-usage-cost
 | | 输入未命中 | 4.50 | 9.00 |
 | | 输出 | 13.50 | 27.00 |
 
-`成本 = (未命中输入 × 单价 + 缓存命中 × 单价 + 输出 × 单价) / 1e6`。未知模型按 `deepseek-v4-pro` 计价。
+`成本 = (未命中输入 × 单价 + 缓存命中 × 单价 + 输出 × 单价) / 1e6`。未知模型按 `deepseek-v4-pro` 计价。价目表为官方 **0817** 版快照。
 
 ### 配色
 
-强调色跟随主题 token `--dsw-alias-brand-primary`：默认主题为 DeepSeek 蓝，黑金主题下自动变为香槟金，无需任何配置。
+强调色跟随主题 token `--dsw-alias-brand-primary`，会自动适配当前主题，无需任何配置。
 
 ### 注意事项
 
