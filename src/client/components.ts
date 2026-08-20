@@ -49,9 +49,19 @@ export function HeaderCostBadge(props: {
   sessionId: string
   usageCost: UsageCostNamespace
   timer?: TimerService
+  useSession?: <T>(selector: (snapshot: any) => T) => T
 }): React.ReactNode {
-  const { sessionId, usageCost, timer } = props
+  const { sessionId, usageCost, timer, useSession } = props
   const [cost, setCost] = React.useState<number | null>(null)
+
+  // Subscribe to the conversation length so the badge re-fetches as new
+  // messages arrive (useSession is undefined in non-session renders).
+  const messageCount = useSession
+    ? useSession((snapshot: any) => {
+        const nodes = snapshot?.chat?.legacy?.nodes
+        return Array.isArray(nodes) ? nodes.length : 0
+      })
+    : 0
 
   React.useEffect(() => {
     let cancelled = false
@@ -62,7 +72,7 @@ export function HeaderCostBadge(props: {
       if (!cancelled) setCost(null)
     })
     return () => { cancelled = true }
-  }, [sessionId, usageCost])
+  }, [sessionId, usageCost, messageCount])
 
   return React.createElement('button', {
     type: 'button',
